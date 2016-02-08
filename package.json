@@ -1,13 +1,13 @@
 {
-  "name": "chat-example",
-  "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "name": "lp-server",
+  "version": "1.0.0",
+  "description": "static server",
   "main": "server.js",
-  "repository": "",
-  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "repository": "git@gitlab.com:mrstig/lillepluss.git",
+  "author": "Stig",
   "dependencies": {
-    "async": "~0.2.8",
-    "express": "~4.0.0",
-    "socket.io": "~0.9.14"
-  }
+    "express": "~4.0.0"
+    
+  },
+  "license": "MIT"
 }
