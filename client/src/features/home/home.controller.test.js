@@ -20,6 +20,17 @@ describe('Controller: Home', function() {
     expect(problems.getProblem).toHaveBeenCalled();
   });
   
+  it('has a list of alternativePairs', function() {
+    var res = {
+      query: "4 + 5",
+      alternatives: [9,4,7,1],
+      answer: 9
+    };
+    spyOn(problems, 'getProblem').and.returnValue(res);
+    ctrl.getRandomProblem();
+    expect(ctrl.alternativePairs).toEqual([{left:9,right:4},{left:7,right:1}]);
+  });
+  
   it('gets a random problem with #getRandomProblem', function() {
     var res = {
       query: "4 + 5",

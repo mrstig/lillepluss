@@ -1,0 +1,19 @@
+<div class="jumbotron centered">
+  <h1>Lillepluss!</h1>
+  <div ng-if="home.problem">
+    <h2>Spørsmål: {{home.problem.query}}</h2>
+    <p ng-if="home.correctAnswer === true">Riktig! <a class="btn btn-primary" role="button" ng-click="home.getRandomProblem()">Neste takk!</a></p>
+    <p ng-if="home.correctAnswer === false">Feil, prøv igjen!</p>
+    <p ng-if="home.correctAnswer === null">Hva tror du?</p>
+    <div class="container-fluid" ng-repeat="alternativePair in home.alternativePairs">
+      <div class="row">
+        <div class="col-xs-6">
+          <a class="btn btn-default btn-lg btn-block" role="button" ng-click="home.clickAlternative(alternativePair.left,$event)" data-alternative="{{alternativePair.left}}">{{alternativePair.left}}</a>
+        </div>
+        <div ng-if="!(alternativePair.right === null)" class="col-xs-6">
+          <a class="btn btn-default btn-lg btn-block" role="button" ng-click="home.clickAlternative(alternativePair.right,$event)" data-alternative="{{alternativePair.right}}">{{alternativePair.right}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

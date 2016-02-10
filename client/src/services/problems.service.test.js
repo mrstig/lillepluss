@@ -13,10 +13,11 @@ describe('Service: problems', function() {
 
   
 
-  it('gets a random problem with #getProblem()', function() {
+  it('creates a random problem with #getProblem()', function() {
     expect(problems).toBeDefined();
     var res = problems.getProblem();
     expect(res.query).toBeDefined();
+    expect(eval(res.query)).toEqual(res.answer);
     expect(res.alternatives).toBeDefined();
     expect(res.answer).toBeDefined();
     expect(res.alternatives).toContain(res.answer);

@@ -5,6 +5,7 @@
   "scripts": {
     "build": "webpack --config webpack.build.js --bail -p",
     "dev": "webpack-dev-server --history-api-fallback --inline --progress",
+    "c9dev": "webpack-dev-server --host $IP --port $PORT --history-api-fallback --hot --inline --progress",
     "test": "karma start",
     "test:live": "karma start --auto-watch --no-single-run"
   },
@@ -39,7 +40,7 @@
     "karma-webpack": "^1.7.0",
     "node-libs-browser": "^0.5.3",
     "null-loader": "^0.1.1",
-    "phantomjs-prebuilt": "^2.0.0",
+    "phantomjs": "^2.0.0",
     "postcss-loader": "^0.7.0",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.0",
