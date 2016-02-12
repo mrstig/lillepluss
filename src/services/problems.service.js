@@ -30,7 +30,7 @@ class Problems {
     });
     alternatives.push(answer);
     _.shuffle(alternatives);
-    return {answer, query, alternatives };
+    return {answer, query, alternatives: _.shuffle(alternatives) };
   }
 }
 

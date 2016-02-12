@@ -31,6 +31,22 @@ describe('Controller: Home', function() {
     expect(ctrl.alternativePairs).toEqual([{left:9,right:4},{left:7,right:1}]);
   });
   
+  it('updates correctAnswer on clickAlternative', function() {
+    var res = {
+      query: "4 + 5",
+      alternatives: [9,4,7,1],
+      answer: 9
+    };
+    spyOn(problems, 'getProblem').and.returnValue(res);
+    ctrl.getRandomProblem();
+    expect(ctrl.correctAnswer).toBe(null);
+    ctrl.clickAlternative(7, null);
+    expect(ctrl.correctAnswer).toBe(false);
+    ctrl.clickAlternative(9, null);
+    expect(ctrl.correctAnswer).toBe(true);
+    
+  });
+  
   it('gets a random problem with #getRandomProblem', function() {
     var res = {
       query: "4 + 5",
