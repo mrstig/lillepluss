@@ -1,5 +1,7 @@
 'use strict';
 
+import "../../css/home.scss";
+
 export default class HomeController {
   constructor(problems) {
     this.problemsSvc = problems;

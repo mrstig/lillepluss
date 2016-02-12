@@ -6,7 +6,7 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = function makeWebpackConfig (options) {
+module.exports = function makeWebpackConfig(options) {
   /**
    * Environment type
    * BUILD is for generating minified builds
@@ -30,7 +30,8 @@ module.exports = function makeWebpackConfig (options) {
    */
   if (TEST) {
     config.entry = {}
-  } else {
+  }
+  else {
     config.entry = {
       app: './src/app.js'
     }
@@ -44,7 +45,8 @@ module.exports = function makeWebpackConfig (options) {
    */
   if (TEST) {
     config.output = {}
-  } else {
+  }
+  else {
     config.output = {
       // Absolute output directory
       path: __dirname + '/public',
@@ -70,9 +72,11 @@ module.exports = function makeWebpackConfig (options) {
    */
   if (TEST) {
     config.devtool = 'inline-source-map';
-  } else if (BUILD) {
+  }
+  else if (BUILD) {
     config.devtool = 'source-map';
-  } else {
+  }
+  else {
     config.devtool = 'eval';
   }
 
@@ -106,6 +110,9 @@ module.exports = function makeWebpackConfig (options) {
       // You can add here any file extension you want to get copied to your output
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
       loader: 'file'
+    }, {
+      test: /\.scss$/,
+      loaders: ["style", "css?sourceMap", "sass?sourceMap"]
     }, {
       // HTML LOADER
       // Reference: https://github.com/webpack/raw-loader
