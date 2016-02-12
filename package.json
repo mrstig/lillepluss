@@ -23,10 +23,7 @@
     "express": "^4.0.0",
     "jwt-decode": "^1.1.1",
     "lodash": "^4.0.0",
-    "webpack": "^1.12.2"    
-  },
-  "devDependencies": {
-    "angular-mocks": "^1.4.7",
+    "webpack": "^1.12.2",
     "autoprefixer": "^6.0.3",
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
@@ -36,6 +33,16 @@
     "file-loader": "^0.8.4",
     "html-webpack-plugin": "^1.6.2",
     "isparta-instrumenter-loader": "^1.0.0",
+    "node-libs-browser": "^0.5.3",
+    "node-sass": "^3.4.2",
+    "null-loader": "^0.1.1",
+    "postcss-loader": "^0.7.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.7",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.14",
     "karma-coverage": "^0.5.3",
@@ -44,15 +51,7 @@
     "karma-sourcemap-loader": "^0.3.6",
     "karma-spec-reporter": "0.0.21",
     "karma-webpack": "^1.7.0",
-    "node-libs-browser": "^0.5.3",
-    "node-sass": "^3.4.2",
-    "null-loader": "^0.1.1",
     "phantomjs": "^2.0.0",
-    "postcss-loader": "^0.7.0",
-    "raw-loader": "^0.5.1",
-    "sass-loader": "^3.1.2",
-    "style-loader": "^0.13.0",
-    "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
   }
 }
