@@ -19,13 +19,13 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid" ng-repeat="alternativePair in home.alternativePairs">
+  <div class="container-fluid" ng-repeat="ap in home.alternativePairs">
     <div class="row m-t-1">
       <div class="col-xs-6">
-        <button class="btn btn-default btn-lg btn-block" role="button" ng-click="home.clickAlternative(alternativePair.left,$event)" ng-disabled="home.correctAnswer" data-alternative="{{alternativePair.left}}">{{alternativePair.left}}</button>
+        <button class="btn btn-default btn-lg btn-block" role="button" ng-click="home.clickAlternative(ap.left.id,$event)" ng-disabled="home.correctAnswer">{{ap.left.val}}</button>
       </div>
-      <div ng-if="!(alternativePair.right === null)" class="col-xs-6">
-        <button class="btn btn-default btn-lg btn-block" role="button" ng-click="home.clickAlternative(alternativePair.right,$event)" ng-disabled="home.correctAnswer" data-alternative="{{alternativePair.right}}">{{alternativePair.right}}</button>
+      <div ng-if="!(ap.right === null)" class="col-xs-6">
+        <button class="btn btn-default btn-lg btn-block" role="button" ng-click="home.clickAlternative(ap.right.id,$event)" ng-disabled="home.correctAnswer">{{ap.right.val}}</button>
       </div>
     </div>
   </div>

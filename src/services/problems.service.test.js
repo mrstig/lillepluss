@@ -20,7 +20,8 @@ describe('Service: problems', function() {
     expect(eval(res.query)).toEqual(res.answer);
     expect(res.alternatives).toBeDefined();
     expect(res.answer).toBeDefined();
+    expect(res.answerIndex).toBeDefined();
     expect(res.alternatives).toContain(res.answer);
-
+  
   });
 });

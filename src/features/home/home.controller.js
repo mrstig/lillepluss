@@ -11,7 +11,8 @@ export default class HomeController {
   }
   
   clickAlternative(input, event) {
-    this.correctAnswer = (input == this.problem.answer);
+    
+    this.correctAnswer = (input == this.problem.answerIndex);
   }
 
   createAlternativePairs(list) {
@@ -21,7 +22,7 @@ export default class HomeController {
     let len = list.length;
     let pairs = [];
     for(let i = 0; i<len; i+=2 ) {
-      let p = {left: list[i], right: i+1<len ? list[i+1] : null};
+      let p = {left: {val: list[i], id:i}, right: i+1<len ? {val: list[i+1], id: (i+1)}: null};
       pairs.push(p);
     }
     return pairs;

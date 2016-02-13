@@ -22,15 +22,11 @@ class Problems {
     let queryHalf = this.getRandomInt(0,answer-1);
     let queryOtherHalf = answer - queryHalf;
     let query = queryHalf + ' + ' + queryOtherHalf;
-    let alternatives = _.range(3).map((v,k)=>{
-      let r = this.getRandomInt(2,this.randLimit);
-      if ( r == answer )
-        r = (r + 1) % this.max;
-      return r;
-    });
-    alternatives.push(answer);
-    _.shuffle(alternatives);
-    return {answer, query, alternatives: _.shuffle(alternatives) };
+
+    let alternatives = _.shuffle(_.filter(_.range(20), (v,k)=>v!=answer)).slice(0,3);
+    let answerIndex = this.getRandomInt(0,4);
+    alternatives.splice(answerIndex, 0, answer);
+    return {answer, query, alternatives, answerIndex };
   }
 }
 
