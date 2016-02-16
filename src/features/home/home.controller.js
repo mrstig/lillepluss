@@ -7,12 +7,17 @@ export default class HomeController {
     this.problemsSvc = problems;
    
     this.getRandomProblem();
-
+    this.correctCount = 0;
+    this.answerCount = 0;
   }
   
   clickAlternative(input, event) {
-    
-    this.correctAnswer = (input == this.problem.answerIndex);
+    let correctAnswer = (input == this.problem.answerIndex);
+    if (correctAnswer)
+      this.correctCount++;
+    this.answerCount++;
+    this.correctAnswer = correctAnswer;
+    this.getRandomProblem();
   }
 
   createAlternativePairs(list) {
