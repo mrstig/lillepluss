@@ -54,7 +54,25 @@ describe('Controller: Home', function() {
     }]);
   });
 
-  it('updates correctAnswer on clickAlternative', function() {
+  // it('updates correctAnswer on clickAlternative', function() {
+  //   var res = {
+  //     query: "4 + 5",
+  //     alternatives: [9, 4, 7, 1],
+  //     answer: 9,
+  //     answerIndex: 0
+  //   };
+  //   spyOn(problems, 'getProblem').and.returnValue(res);
+  //   ctrl.getRandomProblem();
+  //   expect(ctrl.correctAnswer).toBe(null);
+  //   ctrl.clickAlternative(2, null);
+  //   expect(ctrl.correctAnswer).toBe(false);
+  //   ctrl.clickAlternative(0, null);
+  //   expect(ctrl.correctAnswer).toBe(true);
+
+  // });
+
+
+  it('updates correctCount and answerCount on clickAlternative and fetches a new problem', function() {
     var res = {
       query: "4 + 5",
       alternatives: [9, 4, 7, 1],
@@ -63,11 +81,17 @@ describe('Controller: Home', function() {
     };
     spyOn(problems, 'getProblem').and.returnValue(res);
     ctrl.getRandomProblem();
-    expect(ctrl.correctAnswer).toBe(null);
+    expect(ctrl.correctCount).toBe(0);
+    expect(ctrl.answerCount).toBe(0);
+    
     ctrl.clickAlternative(2, null);
-    expect(ctrl.correctAnswer).toBe(false);
+    expect(problems.getProblem).toHaveBeenCalledTimes(2)
+    expect(ctrl.correctCount).toBe(0);
+    expect(ctrl.answerCount).toBe(1);
     ctrl.clickAlternative(0, null);
-    expect(ctrl.correctAnswer).toBe(true);
+    expect(problems.getProblem).toHaveBeenCalledTimes(3)
+    expect(ctrl.correctCount).toBe(1);
+    expect(ctrl.answerCount).toBe(2);
 
   });
 
